@@ -19,7 +19,7 @@ public class Course {
         this.name = name;
     }
     public Course(){
-
+//        System.out.println("这是Course的构造函数2222");
     }
 
 }

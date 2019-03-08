@@ -35,6 +35,11 @@ public class SetTest {
         Course c5 = new Course("5", "Python语言");
         courseToSelect.add(c5);
 
+        Course c6 = new ChildCourse();
+        c6.id = "6";
+        c6.name = "C++语言";
+        courseToSelect.add(c6);
+
 
     }
 
