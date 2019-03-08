@@ -104,7 +104,42 @@ public class ListTest {
 
 
     /**
+     * 4-7
      * 修改List的元素
+     * */
+    public void testModify(){
+        courseToSelect.set( 4, new Course("7", "概论"));
+
+    }
+
+    /**
+     * 4-8
+     * 删除List的元素
+     * */
+    public void testRemove(){
+        //删除指定的对象
+//        Course cc = (Course) courseToSelect.get(4);
+//        System.out.println(cc.id+cc.name+"即将被删除");
+//        courseToSelect.remove(cc);
+
+        //删除指定索引值的对象
+//        System.out.println("即将删除4索引的数据");
+//        courseToSelect.remove(1);
+//        System.out.println("删除成功2！");
+
+        //
+        Course[] courseArr = {(Course) courseToSelect.get(3),(Course) courseToSelect.get(4)};
+        courseToSelect.removeAll(Arrays.asList(courseArr));
+        testForEach();
+    }
+
+    /**
+     * 4-9泛型
+     * 集合中的元素，可以是任意类型的对象(对象的引用)，如果把某个对象放入集合，则会忽略他的类型，而把他当作Object处理
+     *
+     * 泛型则是规定了某个集合只可以存放特定类型的对象，会在编译期间进行类型检查
+     *
+     * 见TestGeneric.java类的文件
      * */
 
 
@@ -120,5 +155,12 @@ public class ListTest {
         lT.testIterator();
 
         lT.testForEach();
+
+        lT.testModify();
+
+        lT.testForEach();
+
+        lT.testRemove();
+
     }
 }
