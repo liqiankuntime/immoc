@@ -4,7 +4,7 @@ package com.collection;
  * Created by Liqiankun on 2019/3/7
  * param:
  *
- * 第四季: 4-3+ 学生选课
+ * 第三季: 4-3+ 学生选课
  *
  * 课程类
  */
