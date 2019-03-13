@@ -73,14 +73,19 @@ public class SetTest {
         String name = console.next();
         cour2.name = name;
         System.out.println("输入课程名为"+ name + "，在List中吗："+ courseToSelect.contains(cour2));
+
+        //第三季：6-3通过indexOf()获取元素在List中的索引值
+       if(courseToSelect.contains(cour2)){
+           System.out.println("课程："+ cour2.name+"的索引值为"+courseToSelect.indexOf(cour2));
+       }
    }
 
    public static void main(String[] args){
 
         SetTest ST = new SetTest();
         ST.testAdd();
-//        ST.TestForEach();
-//        ST.forEachForSet(ST.courseToSelect, "添加了：");
+        ST.TestForEach();
+        ST.forEachForSet(ST.courseToSelect, "添加了：");
 //        //创建学生对象
 //        Student student = new Student("1", "小明");
 //        System.out.println("欢迎"+student.name+"选课！");
