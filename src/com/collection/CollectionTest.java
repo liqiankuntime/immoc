@@ -1,8 +1,6 @@
 package com.collection;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by Liqiankun on 2019/3/14
@@ -23,13 +21,46 @@ public class CollectionTest {
         List<Integer> integerList = new ArrayList<Integer>();
         //插入10个100内的不重复数据
         Random random = new Random();
+        Integer k;
         for(int i=0; i<10; i++){
-            int k = random.nextInt(100);
+            do{
+                k = random.nextInt(100);
+            }while(integerList.contains(k));//如果已经包含了就重新生成
+            integerList.add(k);
         }
+        System.out.println("----------排序前---------");
+        for(Integer inter: integerList){
+            System.out.println("排序前元素："+inter);
+        }
+        Collections.sort(integerList);
+        System.out.println("-----------排序后----------");
+        for(Integer integer: integerList){
+            System.out.println("排序后："+integer);
+        }
+    }
 
+    /**
+     * 2、对String泛型的List进行排序
+     * */
+    public void testStringSort(){
+        List<String> stringList = new ArrayList<String>();
+        stringList.add("5");
+        stringList.add("15");
+        stringList.add("25");
+        System.out.println("-------排序前-------");
+        for(String string: stringList){
+            System.out.println("元素："+string);
+        }
+        Collections.sort(stringList);
+        System.out.println("--------排序后---------");
+        for(String string:stringList){
+            System.out.println("元素："+string);
+        }
     }
 
     public static void main(String[] args){
-
+        CollectionTest CT = new CollectionTest();
+//        CT.testIntegerSort();
+        CT.testStringSort();
     }
 }
