@@ -112,7 +112,22 @@ public class MapTest {
             return;
         }
     }
+    /**
+     * 第三季：6-4测试Map 中是否包含某个Key值或value值
+     * */
+    public void testMapKeyOrValue(){
+        //在Map中，用containsKey()方法，判断Map 中是否包含给定的Key值
+        //在Map， 用containsValue()方法，判断Map中是否包含给定的Value值
 
+        //在Map， 用contains*方法中也是调用每个元素的equals方法
+        System.out.println("请输入学生ID：");
+        Scanner console = new Scanner(System.in);
+        String id = console.next();
+        System.out.println("您输入的学生ID为："+id+"存在学生的Map数据中吗："+ students.containsKey(id));
+        if(students.containsKey(id)){
+            System.out.println("对呀学生是："+students.get(id).name);
+        }
+    }
 
     public static void main(String[] args){
         MapTest MT = new MapTest();
@@ -124,6 +139,8 @@ public class MapTest {
 
         MT.testModify();
         MT.testEntrySet();
+
+        MT.testMapKeyOrValue();
     }
 }
 
